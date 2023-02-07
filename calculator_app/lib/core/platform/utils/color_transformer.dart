@@ -5,4 +5,4 @@ Color colorTransformer(
   double saturation,
   double lightness,
 ) =>
-    HSLColor.fromAHSL(1, hue, saturation, lightness).toColor();
+    HSLColor.fromAHSL(1, hue, saturation / 100, lightness / 100).toColor();
