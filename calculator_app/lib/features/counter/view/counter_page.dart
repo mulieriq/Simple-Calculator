@@ -1,4 +1,4 @@
-import 'package:calculator_app/core/platform/l10n/l10n.dart';
+import 'package:calculator_app/core/core.dart';
 import 'package:calculator_app/features/counter/counter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -8,10 +8,7 @@ class CounterPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (_) => CounterCubit(),
-      child: const CounterView(),
-    );
+    return const CounterView();
   }
 }
 
@@ -22,20 +19,37 @@ class CounterView extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = context.l10n;
     return Scaffold(
-      appBar: AppBar(title: Text(l10n.counterAppBarTitle)),
+      backgroundColor: Theme.of(context).primaryColor,
+      appBar: AppBar(
+        title: Text(
+          l10n.counterAppBarTitle,
+          style: Theme.of(context).textTheme.bodyLarge,
+        ),
+      ),
       body: const Center(child: CounterText()),
       floatingActionButton: Column(
         mainAxisAlignment: MainAxisAlignment.end,
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
           FloatingActionButton(
-            onPressed: () => context.read<CounterCubit>().increment(),
+            onPressed: () => context
+                .read<PreferredThemeCubit>()
+                .updateTheme(PreferredTheme.desaturatedBlueTheme),
             child: const Icon(Icons.add),
           ),
           const SizedBox(height: 8),
           FloatingActionButton(
-            onPressed: () => context.read<CounterCubit>().decrement(),
-            child: const Icon(Icons.remove),
+            onPressed: () => context
+                .read<PreferredThemeCubit>()
+                .updateTheme(PreferredTheme.lightGrayTheme),
+            child: const Icon(Icons.add),
+          ),
+          const SizedBox(height: 8),
+          FloatingActionButton(
+            onPressed: () => context
+                .read<PreferredThemeCubit>()
+                .updateTheme(PreferredTheme.darkVioletTheme),
+            child: const Icon(Icons.add),
           ),
         ],
       ),

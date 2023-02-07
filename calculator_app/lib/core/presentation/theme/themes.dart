@@ -5,7 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 enum PreferredTheme { desaturatedBlueTheme, lightGrayTheme, darkVioletTheme }
 
 class Themes {
-  final Map<PreferredTheme, ThemeData> themeData = {
+    static Map<PreferredTheme, ThemeData> themeData = {
     PreferredTheme.desaturatedBlueTheme: desaturatedBlueTheme(),
     PreferredTheme.lightGrayTheme: lightGrayTheme(),
     PreferredTheme.darkVioletTheme: darkVioletTheme()

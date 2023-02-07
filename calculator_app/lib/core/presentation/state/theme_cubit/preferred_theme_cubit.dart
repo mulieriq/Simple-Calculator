@@ -1,16 +1,17 @@
-import 'package:calculator_app/core/presentation/theme/theme.dart';
+import 'package:calculator_app/core/core.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
 
 part 'preferred_theme_cubit.freezed.dart';
 part 'preferred_theme_state.dart';
 
-class PreferredThemeCubitCubit extends HydratedCubit<PreferredThemeCubitState> {
-  PreferredThemeCubitCubit({PreferredThemeCubitState? state})
+class PreferredThemeCubit extends HydratedCubit<PreferredThemeCubitState> {
+  PreferredThemeCubit({PreferredThemeCubitState? state})
       : super(state ?? PreferredThemeCubitState.desaturatedBlueTheme());
 
-  void updateTheme(PreferredTheme theme) =>
-      emit(PreferredThemeCubitState(theme: theme));
+  void updateTheme(PreferredTheme theme) {
+    emit(PreferredThemeCubitState(theme: theme));
+  }
 
   @override
   PreferredThemeCubitState? fromJson(Map<String, dynamic> json) {
