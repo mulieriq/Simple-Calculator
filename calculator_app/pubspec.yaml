@@ -14,7 +14,10 @@ dependencies:
   flutter_bloc: ^8.1.1
   flutter_localizations:
     sdk: flutter
+  google_fonts: ^4.0.3
+  hydrated_bloc: ^9.1.0
   intl: ^0.17.0
+  path_provider: ^2.0.12
 
 dev_dependencies:
   bloc_test: ^9.1.0
