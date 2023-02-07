@@ -12,8 +12,7 @@ class Themes {
   };
 
   static ThemeData desaturatedBlueTheme() => ThemeData(
-        brightness: Brightness.dark,
-        primaryColor: ColorPalette.darkDesaturatedBlueMainBackground,
+        scaffoldBackgroundColor: ColorPalette.darkDesaturatedBlueMainBackground,
         textTheme: TextTheme(
           //For Text on , Screen, Keys and custom bar
           displayLarge: GoogleFonts.leagueSpartan(
@@ -31,8 +30,7 @@ class Themes {
         ),
       );
   static ThemeData lightGrayTheme() => ThemeData(
-        brightness: Brightness.dark,
-        primaryColor: ColorPalette.lightGrayMainBackground,
+        scaffoldBackgroundColor: ColorPalette.lightGrayMainBackground,
         textTheme: TextTheme(
           //For Text on , Screen, Keys and custom bar
           displayLarge: GoogleFonts.leagueSpartan(
@@ -50,8 +48,7 @@ class Themes {
         ),
       );
   static ThemeData darkVioletTheme() => ThemeData(
-        brightness: Brightness.dark,
-        primaryColor: ColorPalette.veryDarkVioletMainBackground,
+        scaffoldBackgroundColor: ColorPalette.veryDarkVioletMainBackground,
         textTheme: TextTheme(
           //For Text on , Screen, Keys and custom bar
           displayLarge: GoogleFonts.leagueSpartan(
