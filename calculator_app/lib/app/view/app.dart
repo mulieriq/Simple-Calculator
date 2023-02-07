@@ -1,4 +1,3 @@
-import 'package:calculator_app/core/platform/l10n/l10n.dart';
 import 'package:calculator_app/core/presentation/state/theme_cubit/preferred_theme_cubit.dart';
 import 'package:calculator_app/core/presentation/theme/themes.dart';
 import 'package:calculator_app/features/counter/counter.dart';
@@ -22,8 +21,6 @@ class App extends StatelessWidget {
       child: BlocBuilder<PreferredThemeCubit, PreferredThemeCubitState>(
         builder: (context, state) => MaterialApp(
           theme: Themes.themeData[state.theme],
-          localizationsDelegates: AppLocalizations.localizationsDelegates,
-          supportedLocales: AppLocalizations.supportedLocales,
           home: const CounterPage(),
         ),
       ),

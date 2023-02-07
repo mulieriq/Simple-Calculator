@@ -17,13 +17,12 @@ class CounterView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final l10n = context.l10n;
     return Scaffold(
       backgroundColor: Theme.of(context).primaryColor,
       appBar: AppBar(
         title: Text(
-          l10n.counterAppBarTitle,
-          style: Theme.of(context).textTheme.bodyLarge,
+          'l10n.counterAppBarTitle',
+          style: Theme.of(context).textTheme.displayLarge,
         ),
       ),
       body: const Center(child: CounterText()),
