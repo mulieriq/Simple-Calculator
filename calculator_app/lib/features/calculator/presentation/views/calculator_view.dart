@@ -20,9 +20,12 @@ class CalculatorView extends StatelessWidget {
       child: SafeArea(
         child: Scaffold(
           body: Padding(
-            padding: const EdgeInsets.all(25),
+            padding: const EdgeInsets.all(20),
             child: Column(
               children: [
+                const SizedBox(
+                  height: 15,
+                ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -126,10 +129,13 @@ class CalculatorView extends StatelessWidget {
                     )
                   ],
                 ),
+                const SizedBox(
+                  height: 15,
+                ),
                 Container(
-                  margin: const EdgeInsets.symmetric(vertical: 20),
+                  margin: const EdgeInsets.symmetric(vertical: 15),
                   width: double.infinity,
-                  height: 100,
+                  height: 120,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
                     color: Colors.white,
@@ -145,19 +151,86 @@ class CalculatorView extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  margin: const EdgeInsets.symmetric(vertical: 10),
+                  margin: const EdgeInsets.only(top: 15),
                   width: double.infinity,
-                  height: 520,
+                  height: 500,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
                     color: Colors.white,
                   ),
                   child: Container(
-                    margin: const EdgeInsets.all(20),
                     width: double.infinity,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
-                      color: Colors.green,
+                    ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Wrap(
+                          alignment: WrapAlignment.center,
+                          crossAxisAlignment: WrapCrossAlignment.center,
+                          children: [
+                            '7',
+                            '8',
+                            '9',
+                            'Del',
+                            '7',
+                            '8',
+                            '9',
+                            'Del',
+                            '7',
+                            '8',
+                            '9',
+                            'Del',
+                            '7',
+                            '8',
+                            '9',
+                            'Del'
+                          ]
+                              .map(
+                                (e) => Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                    horizontal: 2.5,
+                                    vertical: 5,
+                                  ),
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                      color: Colors.red,
+                                      borderRadius: BorderRadius.circular(10),
+                                    ),
+                                    height: 75,
+                                    width: 75,
+                                  ),
+                                ),
+                              )
+                              .toList(),
+                        ),
+                        Wrap(
+                          alignment: WrapAlignment.center,
+                          crossAxisAlignment: WrapCrossAlignment.center,
+                          children: [
+                            '7',
+                            '8',
+                          ]
+                              .map(
+                                (e) => Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                    horizontal: 2.5,
+                                    vertical: 5,
+                                  ),
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                      color: Colors.green,
+                                      borderRadius: BorderRadius.circular(10),
+                                    ),
+                                    height: 75,
+                                    width: 150,
+                                  ),
+                                ),
+                              )
+                              .toList(),
+                        ),
+                      ],
                     ),
                   ),
                 )
