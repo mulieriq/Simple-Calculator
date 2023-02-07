@@ -1,5 +1,5 @@
-import 'package:calculator_app/features/counter/counter.dart';
 import 'package:calculator_app/core/platform/l10n/l10n.dart';
+import 'package:calculator_app/features/counter/counter.dart';
 import 'package:flutter/material.dart';
 
 class App extends StatelessWidget {
