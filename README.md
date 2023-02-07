@@ -29,7 +29,7 @@ The designs are in JPG static format. Using JPGs will mean that you'll need to u
 -   Maintainability: is it written in a clean, maintainable way?
 -   Testing: is the system adequately tested?
 -   Documentation: is the API well-documented?
-
+-   
 ### CodeSubmit
 
 Please organize, design, test and document your code as if it were going into production - then push your changes to the master branch. After you have pushed your code, you may submit the assignment on the assignment page.
