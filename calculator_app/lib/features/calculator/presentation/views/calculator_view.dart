@@ -37,95 +37,150 @@ class CalculatorView extends StatelessWidget {
                           .copyWith(fontSize: 40),
                     ),
                     const Spacer(),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      crossAxisAlignment: CrossAxisAlignment.end,
-                      children: [
-                        Text(
-                          'THEME',
-                          style: Theme.of(context)
-                              .textTheme
-                              .displayLarge!
-                              .copyWith(fontSize: 18),
-                        ),
-                        const SizedBox(
-                          width: 8,
-                        ),
-                        SizedBox(
-                          width: 80,
-                          child: Column(
-                            children: [
-                              Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceAround,
+                    BlocBuilder<PreferredThemeCubit, PreferredThemeCubitState>(
+                      builder: (context, state) {
+                        return Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          crossAxisAlignment: CrossAxisAlignment.end,
+                          children: [
+                            Text(
+                              'THEME',
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .displayLarge!
+                                  .copyWith(fontSize: 18),
+                            ),
+                            const SizedBox(
+                              width: 8,
+                            ),
+                            SizedBox(
+                              width: 80,
+                              child: Column(
                                 children: [
-                                  Text(
-                                    '1',
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .displayLarge!
-                                        .copyWith(fontSize: 20),
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceAround,
+                                    children: [
+                                      Text(
+                                        '1',
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .displayLarge!
+                                            .copyWith(fontSize: 20),
+                                      ),
+                                      Text(
+                                        '2',
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .displayLarge!
+                                            .copyWith(fontSize: 20),
+                                      ),
+                                      Text(
+                                        '3',
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .displayLarge!
+                                            .copyWith(fontSize: 20),
+                                      )
+                                    ],
                                   ),
-                                  Text(
-                                    '2',
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .displayLarge!
-                                        .copyWith(fontSize: 20),
-                                  ),
-                                  Text(
-                                    '3',
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .displayLarge!
-                                        .copyWith(fontSize: 20),
+                                  Container(
+                                    padding: const EdgeInsets.all(2),
+                                    decoration: BoxDecoration(
+                                      color: Colors.green,
+                                      borderRadius: BorderRadius.circular(20),
+                                    ),
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceAround,
+                                      children: [
+                                        GestureDetector(
+                                          onTap: () => context
+                                              .read<PreferredThemeCubit>()
+                                              .updateTheme(
+                                                PreferredTheme
+                                                    .desaturatedBlueTheme,
+                                              ),
+                                          child: GestureDetector(
+                                            onTap: () => context
+                                                .read<PreferredThemeCubit>()
+                                                .updateTheme(
+                                                  PreferredTheme
+                                                      .desaturatedBlueTheme,
+                                                ),
+                                            child: AnimatedContainer(
+                                              duration: const Duration(
+                                                seconds: 1,
+                                              ),
+                                              margin: const EdgeInsets.all(2),
+                                              width: 18,
+                                              height: 18,
+                                              decoration: BoxDecoration(
+                                                shape: BoxShape.circle,
+                                                color: state ==
+                                                        PreferredThemeCubitState
+                                                            .desaturatedBlueTheme()
+                                                    ? Colors.red
+                                                    : Colors.transparent,
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                        GestureDetector(
+                                          onTap: () => context
+                                              .read<PreferredThemeCubit>()
+                                              .updateTheme(
+                                                PreferredTheme.lightGrayTheme,
+                                              ),
+                                          child: AnimatedContainer(
+                                            duration: const Duration(
+                                              seconds: 1,
+                                            ),
+                                            margin: const EdgeInsets.all(2),
+                                            width: 18,
+                                            height: 18,
+                                            decoration: BoxDecoration(
+                                              shape: BoxShape.circle,
+                                              color: state ==
+                                                      PreferredThemeCubitState
+                                                          .lightGrayTheme()
+                                                  ? Colors.red
+                                                  : Colors.transparent,
+                                            ),
+                                          ),
+                                        ),
+                                        GestureDetector(
+                                          onTap: () => context
+                                              .read<PreferredThemeCubit>()
+                                              .updateTheme(
+                                                PreferredTheme.darkVioletTheme,
+                                              ),
+                                          child: AnimatedContainer(
+                                            duration: const Duration(
+                                              seconds: 1,
+                                            ),
+                                            margin: const EdgeInsets.all(2),
+                                            width: 18,
+                                            height: 18,
+                                            decoration: BoxDecoration(
+                                              shape: BoxShape.circle,
+                                              color: state ==
+                                                      PreferredThemeCubitState
+                                                          .darkVioletTheme()
+                                                  ? Colors.red
+                                                  : Colors.transparent,
+                                            ),
+                                          ),
+                                        )
+                                      ],
+                                    ),
                                   )
                                 ],
                               ),
-                              Container(
-                                padding: const EdgeInsets.all(2),
-                                decoration: BoxDecoration(
-                                  color: Colors.green,
-                                  borderRadius: BorderRadius.circular(20),
-                                ),
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceAround,
-                                  children: [
-                                    Container(
-                                      margin: const EdgeInsets.all(2),
-                                      width: 18,
-                                      height: 18,
-                                      decoration: const BoxDecoration(
-                                        shape: BoxShape.circle,
-                                        color: Colors.transparent,
-                                      ),
-                                    ),
-                                    Container(
-                                      margin: const EdgeInsets.all(2),
-                                      width: 18,
-                                      height: 18,
-                                      decoration: const BoxDecoration(
-                                        shape: BoxShape.circle,
-                                        color: Colors.red,
-                                      ),
-                                    ),
-                                    Container(
-                                      margin: const EdgeInsets.all(2),
-                                      width: 18,
-                                      height: 18,
-                                      decoration: const BoxDecoration(
-                                        shape: BoxShape.circle,
-                                        color: Colors.transparent,
-                                      ),
-                                    )
-                                  ],
-                                ),
-                              )
-                            ],
-                          ),
-                        )
-                      ],
+                            )
+                          ],
+                        );
+                      },
                     )
                   ],
                 ),
@@ -174,18 +229,18 @@ class CalculatorView extends StatelessWidget {
                             '8',
                             '9',
                             'Del',
-                            '7',
-                            '8',
-                            '9',
-                            'Del',
-                            '7',
-                            '8',
-                            '9',
-                            'Del',
-                            '7',
-                            '8',
-                            '9',
-                            'Del'
+                            '4',
+                            '5',
+                            '6',
+                            '+',
+                            '1',
+                            '2',
+                            '3',
+                            '-',
+                            '.',
+                            '0',
+                            '/',
+                            'x'
                           ]
                               .map(
                                 (e) => Padding(
@@ -200,6 +255,15 @@ class CalculatorView extends StatelessWidget {
                                     ),
                                     height: 75,
                                     width: 75,
+                                    child: Center(
+                                      child: Text(
+                                        e,
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .displayLarge!
+                                            .copyWith(fontSize: 20),
+                                      ),
+                                    ),
                                   ),
                                 ),
                               )
@@ -209,8 +273,8 @@ class CalculatorView extends StatelessWidget {
                           alignment: WrapAlignment.center,
                           crossAxisAlignment: WrapCrossAlignment.center,
                           children: [
-                            '7',
-                            '8',
+                            'RESET',
+                            '=',
                           ]
                               .map(
                                 (e) => Padding(
@@ -225,6 +289,15 @@ class CalculatorView extends StatelessWidget {
                                     ),
                                     height: 75,
                                     width: 150,
+                                    child: Center(
+                                      child: Text(
+                                        e,
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .displayLarge!
+                                            .copyWith(fontSize: 20),
+                                      ),
+                                    ),
                                   ),
                                 ),
                               )
@@ -236,32 +309,6 @@ class CalculatorView extends StatelessWidget {
                 )
               ],
             ),
-          ),
-          floatingActionButton: Column(
-            mainAxisAlignment: MainAxisAlignment.end,
-            crossAxisAlignment: CrossAxisAlignment.end,
-            children: [
-              FloatingActionButton(
-                onPressed: () => context
-                    .read<PreferredThemeCubit>()
-                    .updateTheme(PreferredTheme.desaturatedBlueTheme),
-                child: const Icon(Icons.add),
-              ),
-              const SizedBox(height: 8),
-              FloatingActionButton(
-                onPressed: () => context
-                    .read<PreferredThemeCubit>()
-                    .updateTheme(PreferredTheme.lightGrayTheme),
-                child: const Icon(Icons.add),
-              ),
-              const SizedBox(height: 8),
-              FloatingActionButton(
-                onPressed: () => context
-                    .read<PreferredThemeCubit>()
-                    .updateTheme(PreferredTheme.darkVioletTheme),
-                child: const Icon(Icons.add),
-              ),
-            ],
           ),
         ),
       ),
