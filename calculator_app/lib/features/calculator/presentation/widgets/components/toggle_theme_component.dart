@@ -28,7 +28,7 @@ class ToggleThemeComponent extends StatelessWidget {
                     ),
                 child: AnimatedContainer(
                   duration: const Duration(
-                    seconds: 1,
+                    milliseconds: 300,
                   ),
                   margin: const EdgeInsets.all(2),
                   width: 18,
@@ -39,10 +39,7 @@ class ToggleThemeComponent extends StatelessWidget {
                             PreferredThemeCubitState(
                               theme: preferredTheme,
                             )
-                        ? context
-                            .read<PreferredThemeCubit>()
-                            .state
-                            .equalAndToggleButtonThemeTransformer()
+                        ? state.equalAndToggleButtonThemeTransformer()
                         : Colors.transparent,
                   ),
                 ),
