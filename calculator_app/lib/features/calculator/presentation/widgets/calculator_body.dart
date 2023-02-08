@@ -1,6 +1,7 @@
 import 'package:calculator_app/core/core.dart';
 import 'package:calculator_app/features/calculator/calculator.dart';
 import 'package:flutter/material.dart';
+import 'package:responsive_sizer/responsive_sizer.dart';
 
 class CalculatorBody extends StatelessWidget {
   const CalculatorBody({super.key, required this.state});
@@ -9,12 +10,12 @@ class CalculatorBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const CalculatorSizedBox(
-          height: 15,
+        CalculatorSizedBox(
+          height: Adaptive.h(2),
         ),
         CalculatorHeader(state: state),
-        const CalculatorSizedBox(
-          height: 15,
+        CalculatorSizedBox(
+          height: Adaptive.h(2),
         ),
         CalculatorScreen(state: state),
         CalculatorKeypad(state: state)

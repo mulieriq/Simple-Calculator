@@ -1,6 +1,7 @@
 import 'package:calculator_app/core/core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:responsive_sizer/responsive_sizer.dart';
 
 class ToggleThemeComponent extends StatelessWidget {
   const ToggleThemeComponent({
@@ -31,8 +32,8 @@ class ToggleThemeComponent extends StatelessWidget {
                     milliseconds: 300,
                   ),
                   margin: const EdgeInsets.all(2),
-                  width: 18,
-                  height: 18,
+                  width: Adaptive.w(4.5),
+                  height: Adaptive.h(2.2),
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     color: state ==

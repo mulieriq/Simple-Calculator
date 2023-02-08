@@ -1,5 +1,7 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:calculator_app/core/core.dart';
 import 'package:flutter/material.dart';
+import 'package:responsive_sizer/responsive_sizer.dart';
 
 class ResetButtonsComponent extends StatelessWidget {
   const ResetButtonsComponent({
@@ -12,13 +14,13 @@ class ResetButtonsComponent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Wrap(
-      alignment: WrapAlignment.center,
+      alignment: WrapAlignment.spaceBetween,
       crossAxisAlignment: WrapCrossAlignment.center,
       children: Constants.resetButtonList
           .map(
             (e) => Padding(
               padding: const EdgeInsets.symmetric(
-                horizontal: 2.5,
+                horizontal: 7,
                 vertical: 5,
               ),
               child: Container(
@@ -29,13 +31,13 @@ class ResetButtonsComponent extends StatelessWidget {
                       : state.deleteResetButtonThemeTransformer(),
                   borderRadius: BorderRadius.circular(10),
                 ),
-                height: 75,
-                width: 150,
+                height: Adaptive.h(9.5),
+                width: Adaptive.w(39),
                 child: Center(
                   child: Stack(
                     children: [
                       Center(
-                        child: Text(
+                        child: AutoSizeText(
                           e,
                           style: Theme.of(context)
                               .textTheme
@@ -54,7 +56,7 @@ class ResetButtonsComponent extends StatelessWidget {
                       Align(
                         alignment: Alignment.bottomCenter,
                         child: Container(
-                          height: 4,
+                          height: Adaptive.h(.6),
                           decoration: BoxDecoration(
                             color: e == 'RESET'
                                 ? state

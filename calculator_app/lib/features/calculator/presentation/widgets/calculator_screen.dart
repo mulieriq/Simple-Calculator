@@ -1,6 +1,7 @@
 import 'package:calculator_app/core/core.dart';
 import 'package:calculator_app/features/features.dart';
 import 'package:flutter/material.dart';
+import 'package:responsive_sizer/responsive_sizer.dart';
 
 class CalculatorScreen extends StatelessWidget {
   const CalculatorScreen({
@@ -15,7 +16,7 @@ class CalculatorScreen extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.symmetric(vertical: 15),
       width: double.infinity,
-      height: 120,
+      height: Adaptive.h(15),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
         color: state.screeThemeTransformer(),

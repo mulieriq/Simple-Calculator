@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:calculator_app/core/core.dart';
 import 'package:calculator_app/features/calculator/calculator.dart';
 import 'package:flutter/material.dart';
@@ -10,7 +11,7 @@ class ScreenText extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final count = context.select((CalculatorCubit cubit) => cubit.state);
-    return Text(
+    return AutoSizeText(
       '399,981',
       style: theme.textTheme.displayLarge!.copyWith(
         fontSize: 40,

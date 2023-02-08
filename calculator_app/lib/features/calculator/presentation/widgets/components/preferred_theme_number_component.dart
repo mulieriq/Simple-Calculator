@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:calculator_app/core/core.dart';
 import 'package:flutter/material.dart';
 
@@ -15,7 +16,7 @@ class PreferredThemeNumberComponent extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: Constants.kPreferedThemeLevel
           .map(
-            (number) => Text(
+            (number) => AutoSizeText(
               number,
               style: Theme.of(context).textTheme.displayLarge!.copyWith(
                     fontSize: 15,

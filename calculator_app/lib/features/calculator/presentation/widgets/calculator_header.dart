@@ -1,6 +1,8 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:calculator_app/core/core.dart';
 import 'package:calculator_app/features/calculator/calculator.dart';
 import 'package:flutter/material.dart';
+import 'package:responsive_sizer/responsive_sizer.dart';
 
 class CalculatorHeader extends StatelessWidget {
   const CalculatorHeader({
@@ -15,7 +17,7 @@ class CalculatorHeader extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text(
+        AutoSizeText(
           Constants.kTtitle,
           style: Theme.of(context).textTheme.displayLarge!.copyWith(
                 fontSize: 35,
@@ -27,18 +29,18 @@ class CalculatorHeader extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
-            Text(
+            AutoSizeText(
               Constants.kThemeText,
               style: Theme.of(context).textTheme.displayLarge!.copyWith(
                     fontSize: 15,
                     color: state.theme1TextColorTranfromer(),
                   ),
             ),
-            const CalculatorSizedBox(
-              width: 8,
+            CalculatorSizedBox(
+              width: Adaptive.w(2),
             ),
             CalculatorSizedBox(
-              width: 80,
+              width: Adaptive.w(18),
               child: Column(
                 children: [
                   PreferredThemeNumberComponent(state: state),

@@ -1,5 +1,7 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:calculator_app/core/core.dart';
 import 'package:flutter/material.dart';
+import 'package:responsive_sizer/responsive_sizer.dart';
 
 class KeypadButtonComponent extends StatelessWidget {
   const KeypadButtonComponent({
@@ -18,7 +20,7 @@ class KeypadButtonComponent extends StatelessWidget {
           .map(
             (e) => Padding(
               padding: const EdgeInsets.symmetric(
-                horizontal: 2.5,
+                horizontal: 4,
                 vertical: 5,
               ),
               child: Container(
@@ -29,12 +31,12 @@ class KeypadButtonComponent extends StatelessWidget {
                       : state.keyPadButtonThemeTransformer(),
                   borderRadius: BorderRadius.circular(6),
                 ),
-                height: 75,
-                width: 75,
+                height: Adaptive.h(9.5),
+                width: Adaptive.w(19),
                 child: Stack(
                   children: [
                     Center(
-                      child: Text(
+                      child: AutoSizeText(
                         e,
                         style:
                             Theme.of(context).textTheme.displayLarge!.copyWith(
@@ -46,7 +48,7 @@ class KeypadButtonComponent extends StatelessWidget {
                     Align(
                       alignment: Alignment.bottomCenter,
                       child: Container(
-                        height: 4,
+                        height: Adaptive.h(.6),
                         decoration: BoxDecoration(
                           color: e == 'DEL'
                               ? state.deleteResetButtonShadowThemeTransformer()
