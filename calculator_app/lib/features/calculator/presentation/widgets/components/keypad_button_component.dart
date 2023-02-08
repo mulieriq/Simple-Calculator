@@ -30,7 +30,7 @@ class KeypadButtonComponent extends StatelessWidget {
                 child: Container(
                   clipBehavior: Clip.hardEdge,
                   decoration: BoxDecoration(
-                    color: e == 'DEL'
+                    color: e == Constants.kDeleteButton
                         ? state.deleteResetButtonThemeTransformer()
                         : state.keyPadButtonThemeTransformer(),
                     borderRadius: BorderRadius.circular(6),
@@ -46,8 +46,11 @@ class KeypadButtonComponent extends StatelessWidget {
                               .textTheme
                               .displayLarge!
                               .copyWith(
-                                color: e == 'DEL' ? ColorPalette.white : null,
-                                fontSize: e == 'DEL' ? 20 : null,
+                                color: e == Constants.kDeleteButton
+                                    ? ColorPalette.white
+                                    : null,
+                                fontSize:
+                                    e == Constants.kDeleteButton ? 20 : null,
                               ),
                         ),
                       ),
@@ -56,7 +59,7 @@ class KeypadButtonComponent extends StatelessWidget {
                         child: Container(
                           height: Adaptive.h(.6),
                           decoration: BoxDecoration(
-                            color: e == 'DEL'
+                            color: e == Constants.kDeleteButton
                                 ? state
                                     .deleteResetButtonShadowThemeTransformer()
                                 : state

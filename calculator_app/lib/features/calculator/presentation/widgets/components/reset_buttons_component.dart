@@ -30,7 +30,7 @@ class ResetButtonsComponent extends StatelessWidget {
                 child: Container(
                   clipBehavior: Clip.hardEdge,
                   decoration: BoxDecoration(
-                    color: e == '='
+                    color: e == Constants.kEqualButton
                         ? state.equalAndToggleButtonThemeTransformer()
                         : state.deleteResetButtonThemeTransformer(),
                     borderRadius: BorderRadius.circular(10),
@@ -48,7 +48,7 @@ class ResetButtonsComponent extends StatelessWidget {
                                 .displayLarge!
                                 .copyWith(
                                   fontSize: 25,
-                                  color: e == '=' &&
+                                  color: e == Constants.kEqualButton &&
                                           state ==
                                               PreferredThemeCubitState
                                                   .darkVioletTheme()
@@ -62,7 +62,7 @@ class ResetButtonsComponent extends StatelessWidget {
                           child: Container(
                             height: Adaptive.h(.6),
                             decoration: BoxDecoration(
-                              color: e == 'RESET'
+                              color: e == Constants.kResetButton
                                   ? state
                                       .deleteResetButtonShadowThemeTransformer()
                                   : state.equalButtonShadowThemeTransformer(),

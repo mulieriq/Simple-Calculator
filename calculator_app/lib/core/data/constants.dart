@@ -6,7 +6,7 @@ class Constants {
     '7',
     '8',
     '9',
-    'DEL',
+    kDeleteButton,
     '4',
     '5',
     '6',
@@ -22,11 +22,12 @@ class Constants {
   ];
 
   static const List<String> resetButtonList = [
-    'RESET',
-    '=',
+    kResetButton,
+    kEqualButton,
   ];
 
   static const String kResetButton = 'RESET';
   static const String kDeleteButton = 'DEL';
   static const String kEqualButton = '=';
+  static const String kMathError = 'Math Error';
 }

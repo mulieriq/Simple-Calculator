@@ -1,8 +1,11 @@
 import 'package:calculator_app/core/core.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
+import 'package:math_expressions/math_expressions.dart';
 
 class CalculatorCubit extends HydratedCubit<String> {
   CalculatorCubit() : super('0');
+
+  Parser p = Parser();
 
   @override
   String? fromJson(Map<String, dynamic> json) {
@@ -26,6 +29,7 @@ class CalculatorCubit extends HydratedCubit<String> {
         deleteCharacter();
         break;
       case Constants.kEqualButton:
+        result();
         break;
       default:
         handleExpressions(key);
@@ -37,6 +41,8 @@ class CalculatorCubit extends HydratedCubit<String> {
 
     if (expression.isEmpty) {
       emit('0');
+    } else if (state == Constants.kMathError) {
+      emit('0');
     } else {
       emit(expression);
     }
@@ -44,9 +50,25 @@ class CalculatorCubit extends HydratedCubit<String> {
 
   void resetData() => emit('0');
 
-  void result() {}
+  void result() {
+    try {
+      final exp = p.parse(state.replaceAll('x', '*'));
+
+      final contextModel = ContextModel();
+      final results = exp.evaluate(EvaluationType.REAL, contextModel);
+      emit(results.toString());
+    } catch (e) {
+      emit(Constants.kMathError);
+    }
+  }
 
   void handleExpressions(String key) {
-    emit(state + key);
+    if (key == '.') {
+      emit(state + key);
+    } else {
+      final newState = state + key;
+
+      emit(newState.startsWith('0') ? newState.substring(1) : newState);
+    }
   }
 }
