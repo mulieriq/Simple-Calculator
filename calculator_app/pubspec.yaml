@@ -8,6 +8,7 @@ environment:
   flutter: 3.7.0
 
 dependencies:
+  auto_size_text: ^3.0.0
   bloc: ^8.1.0
   flutter:
     sdk: flutter
@@ -19,6 +20,8 @@ dependencies:
   hydrated_bloc: ^9.1.0
   intl: ^0.17.0
   path_provider: ^2.0.12
+  responsive_sizer: ^3.1.1
+  
 
 dev_dependencies:
   bloc_test: ^9.1.0
