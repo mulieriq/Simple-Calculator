@@ -34,7 +34,7 @@ class CalculatorView extends StatelessWidget {
                       style: Theme.of(context)
                           .textTheme
                           .displayLarge!
-                          .copyWith(fontSize: 40),
+                          .copyWith(fontSize: 35),
                     ),
                     const Spacer(),
                     BlocBuilder<PreferredThemeCubit, PreferredThemeCubitState>(
@@ -48,7 +48,7 @@ class CalculatorView extends StatelessWidget {
                               style: Theme.of(context)
                                   .textTheme
                                   .displayLarge!
-                                  .copyWith(fontSize: 18),
+                                  .copyWith(fontSize: 15),
                             ),
                             const SizedBox(
                               width: 8,
@@ -66,21 +66,21 @@ class CalculatorView extends StatelessWidget {
                                         style: Theme.of(context)
                                             .textTheme
                                             .displayLarge!
-                                            .copyWith(fontSize: 20),
+                                            .copyWith(fontSize: 15),
                                       ),
                                       Text(
                                         '2',
                                         style: Theme.of(context)
                                             .textTheme
                                             .displayLarge!
-                                            .copyWith(fontSize: 20),
+                                            .copyWith(fontSize: 15),
                                       ),
                                       Text(
                                         '3',
                                         style: Theme.of(context)
                                             .textTheme
                                             .displayLarge!
-                                            .copyWith(fontSize: 20),
+                                            .copyWith(fontSize: 15),
                                       )
                                     ],
                                   ),
@@ -228,7 +228,7 @@ class CalculatorView extends StatelessWidget {
                             '7',
                             '8',
                             '9',
-                            'Del',
+                            'DEL',
                             '4',
                             '5',
                             '6',
@@ -260,7 +260,10 @@ class CalculatorView extends StatelessWidget {
                                         e,
                                         style: Theme.of(context)
                                             .textTheme
-                                            .displayLarge,
+                                            .displayLarge!
+                                            .copyWith(
+                                              fontSize: e == 'DEL' ? 20 : null,
+                                            ),
                                       ),
                                     ),
                                   ),

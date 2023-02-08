@@ -1,6 +1,5 @@
 import 'package:calculator_app/core/presentation/theme/color_palette.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 enum PreferredTheme { desaturatedBlueTheme, lightGrayTheme, darkVioletTheme }
 
@@ -15,14 +14,16 @@ class Themes {
         scaffoldBackgroundColor: ColorPalette.darkDesaturatedBlueMainBackground,
         textTheme: TextTheme(
           //For Text on , Screen, Keys and custom bar
-          displayLarge: GoogleFonts.leagueSpartan(
+          displayLarge: TextStyle(
+            fontFamily: 'Spartan',
             fontSize: 32,
             fontWeight: FontWeight.w700,
             color: ColorPalette.darkDesaturatedBlueKeyBackground,
           ),
 
           //Reset and DEL button
-          displayMedium: GoogleFonts.leagueSpartan(
+          displayMedium: TextStyle(
+            fontFamily: 'Spartan',
             fontSize: 32,
             fontWeight: FontWeight.w700,
             color: ColorPalette.white,
@@ -33,14 +34,16 @@ class Themes {
         scaffoldBackgroundColor: ColorPalette.lightGrayMainBackground,
         textTheme: TextTheme(
           //For Text on , Screen, Keys and custom bar
-          displayLarge: GoogleFonts.leagueSpartan(
+          displayLarge: TextStyle(
+            fontFamily: 'Spartan',
             fontSize: 32,
             fontWeight: FontWeight.w700,
             color: ColorPalette.veryDarkgrayishYellow,
           ),
 
           //Reset and DEL button
-          displayMedium: GoogleFonts.leagueSpartan(
+          displayMedium: TextStyle(
+            fontFamily: 'Spartan',
             fontSize: 32,
             fontWeight: FontWeight.w700,
             color: ColorPalette.white,
@@ -51,14 +54,16 @@ class Themes {
         scaffoldBackgroundColor: ColorPalette.veryDarkVioletMainBackground,
         textTheme: TextTheme(
           //For Text on , Screen, Keys and custom bar
-          displayLarge: GoogleFonts.leagueSpartan(
+          displayLarge: TextStyle(
+            fontFamily: 'Spartan',
             fontSize: 32,
             fontWeight: FontWeight.w700,
             color: ColorPalette.lightYellow,
           ),
 
           //Reset and DEL button
-          displayMedium: GoogleFonts.leagueSpartan(
+          displayMedium: TextStyle(
+            fontFamily: 'Spartan',
             fontSize: 32,
             fontWeight: FontWeight.w700,
             color: ColorPalette.white,
