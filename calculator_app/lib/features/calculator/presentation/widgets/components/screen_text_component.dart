@@ -12,7 +12,7 @@ class ScreenText extends StatelessWidget {
     final theme = Theme.of(context);
     final count = context.select((CalculatorCubit cubit) => cubit.state);
     return AutoSizeText(
-      '399,981',
+      count,
       style: theme.textTheme.displayLarge!.copyWith(
         fontSize: 40,
         color: context

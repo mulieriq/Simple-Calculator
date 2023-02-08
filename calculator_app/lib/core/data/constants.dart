@@ -25,4 +25,8 @@ class Constants {
     'RESET',
     '=',
   ];
+
+  static const String kResetButton = 'RESET';
+  static const String kDeleteButton = 'DEL';
+  static const String kEqualButton = '=';
 }
