@@ -18,7 +18,7 @@ class Themes {
             fontFamily: 'Spartan',
             fontSize: 32,
             fontWeight: FontWeight.w700,
-            color: ColorPalette.darkDesaturatedBlueKeyBackground,
+            color: ColorPalette.veryDarkgrayishBlue,
           ),
 
           //Reset and DEL button

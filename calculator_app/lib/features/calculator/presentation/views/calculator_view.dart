@@ -31,10 +31,13 @@ class CalculatorView extends StatelessWidget {
                   children: [
                     Text(
                       'calc',
-                      style: Theme.of(context)
-                          .textTheme
-                          .displayLarge!
-                          .copyWith(fontSize: 35),
+                      style: Theme.of(context).textTheme.displayLarge!.copyWith(
+                            fontSize: 35,
+                            color: context
+                                .read<PreferredThemeCubit>()
+                                .state
+                                .theme1TextColorTranfromer(),
+                          ),
                     ),
                     const Spacer(),
                     BlocBuilder<PreferredThemeCubit, PreferredThemeCubitState>(
@@ -48,7 +51,13 @@ class CalculatorView extends StatelessWidget {
                               style: Theme.of(context)
                                   .textTheme
                                   .displayLarge!
-                                  .copyWith(fontSize: 15),
+                                  .copyWith(
+                                    fontSize: 15,
+                                    color: context
+                                        .read<PreferredThemeCubit>()
+                                        .state
+                                        .theme1TextColorTranfromer(),
+                                  ),
                             ),
                             const SizedBox(
                               width: 8,
@@ -66,28 +75,49 @@ class CalculatorView extends StatelessWidget {
                                         style: Theme.of(context)
                                             .textTheme
                                             .displayLarge!
-                                            .copyWith(fontSize: 15),
+                                            .copyWith(
+                                              fontSize: 15,
+                                              color: context
+                                                  .read<PreferredThemeCubit>()
+                                                  .state
+                                                  .theme1TextColorTranfromer(),
+                                            ),
                                       ),
                                       Text(
                                         '2',
                                         style: Theme.of(context)
                                             .textTheme
                                             .displayLarge!
-                                            .copyWith(fontSize: 15),
+                                            .copyWith(
+                                              fontSize: 15,
+                                              color: context
+                                                  .read<PreferredThemeCubit>()
+                                                  .state
+                                                  .theme1TextColorTranfromer(),
+                                            ),
                                       ),
                                       Text(
                                         '3',
                                         style: Theme.of(context)
                                             .textTheme
                                             .displayLarge!
-                                            .copyWith(fontSize: 15),
+                                            .copyWith(
+                                              fontSize: 15,
+                                              color: context
+                                                  .read<PreferredThemeCubit>()
+                                                  .state
+                                                  .theme1TextColorTranfromer(),
+                                            ),
                                       )
                                     ],
                                   ),
                                   Container(
                                     padding: const EdgeInsets.all(2),
                                     decoration: BoxDecoration(
-                                      color: Colors.green,
+                                      color: context
+                                          .read<PreferredThemeCubit>()
+                                          .state
+                                          .keyPadToggleThemeTransformer(),
                                       borderRadius: BorderRadius.circular(20),
                                     ),
                                     child: Row(
@@ -120,7 +150,11 @@ class CalculatorView extends StatelessWidget {
                                                 color: state ==
                                                         PreferredThemeCubitState
                                                             .desaturatedBlueTheme()
-                                                    ? Colors.red
+                                                    ? context
+                                                        .read<
+                                                            PreferredThemeCubit>()
+                                                        .state
+                                                        .equalAndToggleButtonThemeTransformer()
                                                     : Colors.transparent,
                                               ),
                                             ),
@@ -144,7 +178,11 @@ class CalculatorView extends StatelessWidget {
                                               color: state ==
                                                       PreferredThemeCubitState
                                                           .lightGrayTheme()
-                                                  ? Colors.red
+                                                  ? context
+                                                      .read<
+                                                          PreferredThemeCubit>()
+                                                      .state
+                                                      .equalAndToggleButtonThemeTransformer()
                                                   : Colors.transparent,
                                             ),
                                           ),
@@ -167,7 +205,11 @@ class CalculatorView extends StatelessWidget {
                                               color: state ==
                                                       PreferredThemeCubitState
                                                           .darkVioletTheme()
-                                                  ? Colors.red
+                                                  ? context
+                                                      .read<
+                                                          PreferredThemeCubit>()
+                                                      .state
+                                                      .equalAndToggleButtonThemeTransformer()
                                                   : Colors.transparent,
                                             ),
                                           ),
@@ -193,7 +235,10 @@ class CalculatorView extends StatelessWidget {
                   height: 120,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
-                    color: Colors.white,
+                    color: context
+                        .read<PreferredThemeCubit>()
+                        .state
+                        .screeThemeTransformer(),
                   ),
                   child: const Align(
                     alignment: Alignment.centerRight,
@@ -211,7 +256,10 @@ class CalculatorView extends StatelessWidget {
                   height: 500,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
-                    color: Colors.white,
+                    color: context
+                        .read<PreferredThemeCubit>()
+                        .state
+                        .keyPadToggleThemeTransformer(),
                   ),
                   child: Container(
                     width: double.infinity,
@@ -249,22 +297,58 @@ class CalculatorView extends StatelessWidget {
                                     vertical: 5,
                                   ),
                                   child: Container(
+                                    clipBehavior: Clip.hardEdge,
                                     decoration: BoxDecoration(
-                                      color: Colors.red,
-                                      borderRadius: BorderRadius.circular(10),
+                                      color: e == 'DEL'
+                                          ? context
+                                              .read<PreferredThemeCubit>()
+                                              .state
+                                              .deleteResetButtonThemeTransformer()
+                                          : context
+                                              .read<PreferredThemeCubit>()
+                                              .state
+                                              .keyPadButtonThemeTransformer(),
+                                      borderRadius: BorderRadius.circular(6),
                                     ),
                                     height: 75,
                                     width: 75,
-                                    child: Center(
-                                      child: Text(
-                                        e,
-                                        style: Theme.of(context)
-                                            .textTheme
-                                            .displayLarge!
-                                            .copyWith(
-                                              fontSize: e == 'DEL' ? 20 : null,
+                                    child: Stack(
+                                      children: [
+                                        Center(
+                                          child: Text(
+                                            e,
+                                            style: Theme.of(context)
+                                                .textTheme
+                                                .displayLarge!
+                                                .copyWith(
+                                                  color: e == 'DEL'
+                                                      ? ColorPalette.white
+                                                      : null,
+                                                  fontSize:
+                                                      e == 'DEL' ? 20 : null,
+                                                ),
+                                          ),
+                                        ),
+                                        Align(
+                                          alignment: Alignment.bottomCenter,
+                                          child: Container(
+                                            height: 4,
+                                            decoration: BoxDecoration(
+                                              color: e == 'DEL'
+                                                  ? context
+                                                      .read<
+                                                          PreferredThemeCubit>()
+                                                      .state
+                                                      .deleteResetButtonShadowThemeTransformer()
+                                                  : context
+                                                      .read<
+                                                          PreferredThemeCubit>()
+                                                      .state
+                                                      .keyPadNumberButtonShadowThemeTransformer(),
                                             ),
-                                      ),
+                                          ),
+                                        )
+                                      ],
                                     ),
                                   ),
                                 ),
@@ -285,19 +369,65 @@ class CalculatorView extends StatelessWidget {
                                     vertical: 5,
                                   ),
                                   child: Container(
+                                    clipBehavior: Clip.hardEdge,
                                     decoration: BoxDecoration(
-                                      color: Colors.green,
+                                      color: e == '='
+                                          ? context
+                                              .read<PreferredThemeCubit>()
+                                              .state
+                                              .equalAndToggleButtonThemeTransformer()
+                                          : context
+                                              .read<PreferredThemeCubit>()
+                                              .state
+                                              .deleteResetButtonThemeTransformer(),
                                       borderRadius: BorderRadius.circular(10),
                                     ),
                                     height: 75,
                                     width: 150,
                                     child: Center(
-                                      child: Text(
-                                        e,
-                                        style: Theme.of(context)
-                                            .textTheme
-                                            .displayLarge!
-                                            .copyWith(fontSize: 25),
+                                      child: Stack(
+                                        children: [
+                                          Center(
+                                            child: Text(
+                                              e,
+                                              style: Theme.of(context)
+                                                  .textTheme
+                                                  .displayLarge!
+                                                  .copyWith(
+                                                    fontSize: 25,
+                                                    color: e == '=' &&
+                                                            context
+                                                                    .read<
+                                                                        PreferredThemeCubit>()
+                                                                    .state ==
+                                                                PreferredThemeCubitState
+                                                                    .darkVioletTheme()
+                                                        ? ColorPalette
+                                                            .veryDarkBlue
+                                                        : ColorPalette.white,
+                                                  ),
+                                            ),
+                                          ),
+                                          Align(
+                                            alignment: Alignment.bottomCenter,
+                                            child: Container(
+                                              height: 4,
+                                              decoration: BoxDecoration(
+                                                color: e == 'RESET'
+                                                    ? context
+                                                        .read<
+                                                            PreferredThemeCubit>()
+                                                        .state
+                                                        .deleteResetButtonShadowThemeTransformer()
+                                                    : context
+                                                        .read<
+                                                            PreferredThemeCubit>()
+                                                        .state
+                                                        .equalButtonShadowThemeTransformer(),
+                                              ),
+                                            ),
+                                          )
+                                        ],
                                       ),
                                     ),
                                   ),

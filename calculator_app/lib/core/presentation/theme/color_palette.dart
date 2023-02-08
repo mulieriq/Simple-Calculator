@@ -1,9 +1,6 @@
 import 'package:calculator_app/core/core.dart';
 import 'package:flutter/material.dart';
 
-const kPrimaryColor = Color.fromRGBO(245, 24, 197, 1);
-const kBackgroundColor = Color.fromRGBO(244, 251, 255, 0.918);
-
 class ColorPalette {
 // TK (Toggle and Keypad)
 // TKS (Toggle, Keypad and Screen)
