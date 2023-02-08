@@ -9,6 +9,9 @@ class ScreenText extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final count = context.select((CalculatorCubit cubit) => cubit.state);
-    return Text('$count', style: theme.textTheme.displayLarge);
+    return Text(
+      '399,981',
+      style: theme.textTheme.displayLarge!.copyWith(fontSize: 50),
+    );
   }
 }

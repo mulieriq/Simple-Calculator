@@ -260,8 +260,7 @@ class CalculatorView extends StatelessWidget {
                                         e,
                                         style: Theme.of(context)
                                             .textTheme
-                                            .displayLarge!
-                                            .copyWith(fontSize: 20),
+                                            .displayLarge,
                                       ),
                                     ),
                                   ),
@@ -295,7 +294,7 @@ class CalculatorView extends StatelessWidget {
                                         style: Theme.of(context)
                                             .textTheme
                                             .displayLarge!
-                                            .copyWith(fontSize: 20),
+                                            .copyWith(fontSize: 25),
                                       ),
                                     ),
                                   ),
