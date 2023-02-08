@@ -1,9 +1,21 @@
-import 'package:bloc/bloc.dart';
-
 import 'package:calculator_app/core/core.dart';
+import 'package:hydrated_bloc/hydrated_bloc.dart';
 
-class CalculatorCubit extends Cubit<String> {
+class CalculatorCubit extends HydratedCubit<String> {
   CalculatorCubit() : super('0');
+
+  @override
+  String? fromJson(Map<String, dynamic> json) {
+    final expression = json['expression'] as String;
+    return expression;
+  }
+
+  @override
+  Map<String, dynamic>? toJson(String state) {
+    final expression = {'expression': state};
+
+    return expression;
+  }
 
   void keyPressed({required String key}) {
     switch (key) {
