@@ -22,6 +22,7 @@ class KeypadButtonComponent extends StatelessWidget {
       children: Constants.kKeypadElements
           .map(
             (key) => Padding(
+              key: Key(key),
               padding: const EdgeInsets.symmetric(
                 horizontal: 4,
                 vertical: 5,

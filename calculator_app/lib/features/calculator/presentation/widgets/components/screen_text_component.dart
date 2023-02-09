@@ -19,6 +19,7 @@ class ScreenText extends StatelessWidget {
     final count = context.select((CalculatorCubit cubit) => cubit.state);
     return AutoSizeText(
       count,
+      key: const Key('screen_text'),
       style: theme.textTheme.displayLarge!.copyWith(
         fontSize: 40,
         color: state.theme1TextColorTranfromer(),

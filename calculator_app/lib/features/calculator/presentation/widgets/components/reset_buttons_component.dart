@@ -22,6 +22,7 @@ class ResetButtonsComponent extends StatelessWidget {
       children: Constants.resetButtonList
           .map(
             (key) => Padding(
+              key: Key(key),
               padding: const EdgeInsets.symmetric(
                 horizontal: 7,
                 vertical: 5,

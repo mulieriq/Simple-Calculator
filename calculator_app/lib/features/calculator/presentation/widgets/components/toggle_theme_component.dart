@@ -25,6 +25,7 @@ class ToggleThemeComponent extends StatelessWidget {
         children: PreferredTheme.values
             .map(
               (preferredTheme) => GestureDetector(
+                key: Key(preferredTheme.toString()),
                 onTap: () => context.read<PreferredThemeCubit>().updateTheme(
                       preferredTheme,
                     ),

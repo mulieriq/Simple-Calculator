@@ -25,7 +25,9 @@ class App extends StatelessWidget {
           builder: (context, state) => MaterialApp(
             debugShowCheckedModeBanner: false,
             theme: Themes.themeData[state.theme],
-            home: const CalculatorView(),
+            home: const CalculatorView(
+              key: Key('calculator_view'),
+            ),
           ),
         ),
       ),
