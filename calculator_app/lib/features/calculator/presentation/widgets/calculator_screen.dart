@@ -14,9 +14,9 @@ class CalculatorScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(vertical: 15),
+      margin: EdgeInsets.symmetric(vertical: Adaptive.h(1)),
       width: double.infinity,
-      height: Adaptive.h(15),
+      height: Adaptive.h(14),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
         color: state.screeThemeTransformer(),

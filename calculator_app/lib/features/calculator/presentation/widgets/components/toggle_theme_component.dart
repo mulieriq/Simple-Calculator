@@ -33,7 +33,7 @@ class ToggleThemeComponent extends StatelessWidget {
                   duration: const Duration(
                     milliseconds: 300,
                   ),
-                  margin: const EdgeInsets.all(2),
+                  margin: EdgeInsets.all(Adaptive.h(.2)),
                   width: Adaptive.w(4.5),
                   height: Adaptive.h(2.2),
                   decoration: BoxDecoration(

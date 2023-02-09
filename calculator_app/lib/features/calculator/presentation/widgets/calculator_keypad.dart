@@ -15,7 +15,7 @@ class CalculatorKeypad extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(top: 15),
+      margin: EdgeInsets.only(top: Adaptive.h(2)),
       width: double.infinity,
       height: Adaptive.h(60),
       decoration: BoxDecoration(

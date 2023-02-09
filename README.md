@@ -36,4 +36,11 @@ Please organize, design, test and document your code as if it were going into pr
 
 **Have fun building!** 🚀
 
+
+###  Submission
+
+|<image src="screenshots/theme1.jpg"> | <image src="screenshots/theme2.jpg"> | <image src="screenshots/theme3.jpg">| <image src="screenshots/computations.jpg">|
+|:---:|:---:|:---:|:---:|
+|Theme 1|Theme 2|Theme 3|Computation|
+
 The Boya Team
