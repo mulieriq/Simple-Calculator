@@ -1,2 +1,2 @@
 export './color_transformer.dart';
-export './extensions.dart';
+export './color_transformer_extensions.dart';

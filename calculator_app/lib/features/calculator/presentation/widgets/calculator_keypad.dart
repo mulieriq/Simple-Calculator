@@ -3,6 +3,7 @@ import 'package:calculator_app/features/calculator/calculator.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
+// The keypad
 class CalculatorKeypad extends StatelessWidget {
   const CalculatorKeypad({
     super.key,
@@ -26,6 +27,7 @@ class CalculatorKeypad extends StatelessWidget {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
         ),
+        // Keypad buttons
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [

@@ -2,6 +2,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:calculator_app/core/core.dart';
 import 'package:flutter/material.dart';
 
+// Retuns theme level number
 class PreferredThemeNumberComponent extends StatelessWidget {
   const PreferredThemeNumberComponent({
     super.key,

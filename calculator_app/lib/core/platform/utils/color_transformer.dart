@@ -1,5 +1,6 @@
 import 'package:flutter/widgets.dart';
 
+// Transforms HSL color to Color
 Color colorTransformer(
   double hue,
   double saturation,

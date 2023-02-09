@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// Handles spacing in the widget tree
 class CalculatorSizedBox extends StatelessWidget {
   const CalculatorSizedBox({super.key, this.height, this.width, this.child});
 

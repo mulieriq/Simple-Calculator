@@ -1,7 +1,10 @@
 import 'package:calculator_app/core/core.dart';
 import 'package:flutter/material.dart';
 
+// returns different colors depending on the current theme
+
 extension ThemeTranformerExtenstion on PreferredThemeCubitState {
+  // Transforms The screen background color depending on the theme
   Color screeThemeTransformer() {
     if (this == PreferredThemeCubitState.desaturatedBlueTheme()) {
       return ColorPalette.darkDesaturatedBlueScreenBackground;
@@ -15,6 +18,8 @@ extension ThemeTranformerExtenstion on PreferredThemeCubitState {
     return ColorPalette.darkDesaturatedBlueScreenBackground;
   }
 
+  // Transforms The Keypad and toggle button
+  // background color depending on the theme
   Color keyPadToggleThemeTransformer() {
     if (this == PreferredThemeCubitState.desaturatedBlueTheme()) {
       return ColorPalette.darkDesaturatedBlueTKBackground;
@@ -28,6 +33,8 @@ extension ThemeTranformerExtenstion on PreferredThemeCubitState {
     return ColorPalette.darkDesaturatedBlueTKBackground;
   }
 
+  // Transforms The Equal and toggle button
+  // colors depending on the theme
   Color equalAndToggleButtonThemeTransformer() {
     if (this == PreferredThemeCubitState.desaturatedBlueTheme()) {
       return ColorPalette.redTKBackground;
@@ -41,6 +48,7 @@ extension ThemeTranformerExtenstion on PreferredThemeCubitState {
     return ColorPalette.redTKBackground;
   }
 
+  // Transforms DEL and Reset Button colors depending on the theme
   Color deleteResetButtonThemeTransformer() {
     if (this == PreferredThemeCubitState.desaturatedBlueTheme()) {
       return ColorPalette.darkDesaturatedBlueKeyBackground;
@@ -54,6 +62,7 @@ extension ThemeTranformerExtenstion on PreferredThemeCubitState {
     return ColorPalette.darkDesaturatedBlueKeyBackground;
   }
 
+  // Transforms Keypad Button colors depending on the theme
   Color keyPadButtonThemeTransformer() {
     if (this == PreferredThemeCubitState.desaturatedBlueTheme()) {
       return ColorPalette.lightGrayishOrangeKeyBackground;
@@ -67,6 +76,7 @@ extension ThemeTranformerExtenstion on PreferredThemeCubitState {
     return ColorPalette.lightGrayishOrangeKeyBackground;
   }
 
+  // Transforms Keypad Button shadow colors depending on the theme
   Color keyPadNumberButtonShadowThemeTransformer() {
     if (this == PreferredThemeCubitState.desaturatedBlueTheme()) {
       return ColorPalette.grayishOrangeKeyShadow;
@@ -80,6 +90,7 @@ extension ThemeTranformerExtenstion on PreferredThemeCubitState {
     return ColorPalette.grayishOrangeKeyShadow;
   }
 
+  // Transforms DEL and Reset Button shadow colors depending on the theme
   Color deleteResetButtonShadowThemeTransformer() {
     if (this == PreferredThemeCubitState.desaturatedBlueTheme()) {
       return ColorPalette.darkDesaturatedBlueKeyShadow;
@@ -93,6 +104,7 @@ extension ThemeTranformerExtenstion on PreferredThemeCubitState {
     return ColorPalette.darkDesaturatedBlueKeyShadow;
   }
 
+  // Transforms Equal Button shadow colors depending on the theme
   Color equalButtonShadowThemeTransformer() {
     if (this == PreferredThemeCubitState.desaturatedBlueTheme()) {
       return ColorPalette.darkRedKeyShadow;
@@ -106,6 +118,7 @@ extension ThemeTranformerExtenstion on PreferredThemeCubitState {
     return ColorPalette.darkRedKeyShadow;
   }
 
+  // returns text color for theme 1
   Color? theme1TextColorTranfromer() {
     if (this == PreferredThemeCubitState.desaturatedBlueTheme()) {
       return ColorPalette.white;

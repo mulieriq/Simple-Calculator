@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
+// Retuns RESET and  EQUAL buttons
 class ResetButtonsComponent extends StatelessWidget {
   const ResetButtonsComponent({
     super.key,
@@ -20,17 +21,18 @@ class ResetButtonsComponent extends StatelessWidget {
       crossAxisAlignment: WrapCrossAlignment.center,
       children: Constants.resetButtonList
           .map(
-            (e) => Padding(
+            (key) => Padding(
               padding: const EdgeInsets.symmetric(
                 horizontal: 7,
                 vertical: 5,
               ),
               child: InkWell(
-                onTap: () => context.read<CalculatorCubit>().keyPressed(key: e),
+                onTap: () =>
+                    context.read<CalculatorCubit>().keyPressed(key: key),
                 child: Container(
                   clipBehavior: Clip.hardEdge,
                   decoration: BoxDecoration(
-                    color: e == Constants.kEqualButton
+                    color: key == Constants.kEqualButton
                         ? state.equalAndToggleButtonThemeTransformer()
                         : state.deleteResetButtonThemeTransformer(),
                     borderRadius: BorderRadius.circular(10),
@@ -42,13 +44,13 @@ class ResetButtonsComponent extends StatelessWidget {
                       children: [
                         Center(
                           child: AutoSizeText(
-                            e,
+                            key,
                             style: Theme.of(context)
                                 .textTheme
                                 .displayLarge!
                                 .copyWith(
                                   fontSize: 25,
-                                  color: e == Constants.kEqualButton &&
+                                  color: key == Constants.kEqualButton &&
                                           state ==
                                               PreferredThemeCubitState
                                                   .darkVioletTheme()
@@ -62,7 +64,7 @@ class ResetButtonsComponent extends StatelessWidget {
                           child: Container(
                             height: Adaptive.h(.6),
                             decoration: BoxDecoration(
-                              color: e == Constants.kResetButton
+                              color: key == Constants.kResetButton
                                   ? state
                                       .deleteResetButtonShadowThemeTransformer()
                                   : state.equalButtonShadowThemeTransformer(),

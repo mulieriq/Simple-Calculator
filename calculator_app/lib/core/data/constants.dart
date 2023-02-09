@@ -1,3 +1,4 @@
+// Used text and numbers in the app
 class Constants {
   static const String kTtitle = 'calc';
   static const String kThemeText = 'THEME';

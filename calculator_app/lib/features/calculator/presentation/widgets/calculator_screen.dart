@@ -21,13 +21,13 @@ class CalculatorScreen extends StatelessWidget {
         borderRadius: BorderRadius.circular(10),
         color: state.screeThemeTransformer(),
       ),
-      child: const Align(
+      child: Align(
         alignment: Alignment.centerRight,
         child: Padding(
-          padding: EdgeInsets.symmetric(
+          padding: const EdgeInsets.symmetric(
             horizontal: 15,
           ),
-          child: ScreenText(),
+          child: ScreenText(state: state),
         ),
       ),
     );

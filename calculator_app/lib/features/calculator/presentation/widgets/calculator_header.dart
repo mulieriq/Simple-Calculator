@@ -4,6 +4,7 @@ import 'package:calculator_app/features/calculator/calculator.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
+// Calculator Header
 class CalculatorHeader extends StatelessWidget {
   const CalculatorHeader({
     super.key,
@@ -14,6 +15,7 @@ class CalculatorHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Calc lable
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
@@ -25,6 +27,7 @@ class CalculatorHeader extends StatelessWidget {
               ),
         ),
         const Spacer(),
+        // Theme Controls
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.end,

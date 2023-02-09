@@ -1,5 +1,4 @@
 import 'package:calculator_app/core/core.dart';
-import 'package:calculator_app/core/presentation/theme/color_palette.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
 

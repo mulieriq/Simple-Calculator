@@ -4,8 +4,14 @@ import 'package:calculator_app/features/calculator/calculator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+// Result and computation screen
 class ScreenText extends StatelessWidget {
-  const ScreenText({super.key});
+  const ScreenText({
+    super.key,
+    required this.state,
+  });
+
+  final PreferredThemeCubitState state;
 
   @override
   Widget build(BuildContext context) {
@@ -15,10 +21,7 @@ class ScreenText extends StatelessWidget {
       count,
       style: theme.textTheme.displayLarge!.copyWith(
         fontSize: 40,
-        color: context
-            .read<PreferredThemeCubit>()
-            .state
-            .theme1TextColorTranfromer(),
+        color: state.theme1TextColorTranfromer(),
       ),
     );
   }

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
+// Toogle theme component
 class ToggleThemeComponent extends StatelessWidget {
   const ToggleThemeComponent({
     super.key,

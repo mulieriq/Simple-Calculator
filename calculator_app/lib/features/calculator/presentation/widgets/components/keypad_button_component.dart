@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
+// Key pad Buttons
 class KeypadButtonComponent extends StatelessWidget {
   const KeypadButtonComponent({
     super.key,
@@ -20,17 +21,18 @@ class KeypadButtonComponent extends StatelessWidget {
       crossAxisAlignment: WrapCrossAlignment.center,
       children: Constants.kKeypadElements
           .map(
-            (e) => Padding(
+            (key) => Padding(
               padding: const EdgeInsets.symmetric(
                 horizontal: 4,
                 vertical: 5,
               ),
               child: InkWell(
-                onTap: () => context.read<CalculatorCubit>().keyPressed(key: e),
+                onTap: () =>
+                    context.read<CalculatorCubit>().keyPressed(key: key),
                 child: Container(
                   clipBehavior: Clip.hardEdge,
                   decoration: BoxDecoration(
-                    color: e == Constants.kDeleteButton
+                    color: key == Constants.kDeleteButton
                         ? state.deleteResetButtonThemeTransformer()
                         : state.keyPadButtonThemeTransformer(),
                     borderRadius: BorderRadius.circular(6),
@@ -41,16 +43,16 @@ class KeypadButtonComponent extends StatelessWidget {
                     children: [
                       Center(
                         child: AutoSizeText(
-                          e,
+                          key,
                           style: Theme.of(context)
                               .textTheme
                               .displayLarge!
                               .copyWith(
-                                color: e == Constants.kDeleteButton
+                                color: key == Constants.kDeleteButton
                                     ? ColorPalette.white
                                     : null,
                                 fontSize:
-                                    e == Constants.kDeleteButton ? 20 : null,
+                                    key == Constants.kDeleteButton ? 20 : null,
                               ),
                         ),
                       ),
@@ -59,7 +61,7 @@ class KeypadButtonComponent extends StatelessWidget {
                         child: Container(
                           height: Adaptive.h(.6),
                           decoration: BoxDecoration(
-                            color: e == Constants.kDeleteButton
+                            color: key == Constants.kDeleteButton
                                 ? state
                                     .deleteResetButtonShadowThemeTransformer()
                                 : state
