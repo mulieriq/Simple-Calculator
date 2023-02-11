@@ -1,3 +1,4 @@
+import 'package:calculator_app/core/platform/state/orientation_cubit.dart';
 import 'package:calculator_app/core/presentation/state/theme_cubit/preferred_theme_cubit.dart';
 import 'package:calculator_app/core/presentation/theme/themes.dart';
 import 'package:calculator_app/features/calculator/calculator.dart';
@@ -19,6 +20,9 @@ class App extends StatelessWidget {
           ),
           BlocProvider(
             create: (context) => CalculatorCubit(),
+          ),
+          BlocProvider(
+            create: (context) => OrientationCubit(),
           ),
         ],
         child: BlocBuilder<PreferredThemeCubit, PreferredThemeCubitState>(

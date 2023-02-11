@@ -1,5 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:calculator_app/core/core.dart';
+import 'package:calculator_app/core/platform/state/orientation_cubit.dart';
 import 'package:calculator_app/features/features.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -38,8 +39,12 @@ class ResetButtonsComponent extends StatelessWidget {
                         : state.deleteResetButtonThemeTransformer(),
                     borderRadius: BorderRadius.circular(10),
                   ),
-                  height: Adaptive.h(9.5),
-                  width: Adaptive.w(39),
+                  height: Adaptive.h(
+                    context.read<OrientationCubit>().isLandscape() ? 15 : 9.5,
+                  ),
+                  width: Adaptive.w(
+                    context.read<OrientationCubit>().isLandscape() ? 25 : 39,
+                  ),
                   child: Center(
                     child: Stack(
                       children: [

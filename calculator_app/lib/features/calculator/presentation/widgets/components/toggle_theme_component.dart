@@ -1,4 +1,5 @@
 import 'package:calculator_app/core/core.dart';
+import 'package:calculator_app/core/platform/state/orientation_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
@@ -34,8 +35,12 @@ class ToggleThemeComponent extends StatelessWidget {
                     milliseconds: 300,
                   ),
                   margin: EdgeInsets.all(Adaptive.h(.2)),
-                  width: Adaptive.w(4.5),
-                  height: Adaptive.h(2.2),
+                  width: Adaptive.w(
+                    context.read<OrientationCubit>().isLandscape() ? 4.5 : 4.5,
+                  ),
+                  height: Adaptive.h(
+                    context.read<OrientationCubit>().isLandscape() ? 5 : 2.2,
+                  ),
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     color: state ==

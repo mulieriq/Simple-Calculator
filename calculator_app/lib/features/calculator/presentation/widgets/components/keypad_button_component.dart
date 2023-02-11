@@ -1,5 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:calculator_app/core/core.dart';
+import 'package:calculator_app/core/platform/state/orientation_cubit.dart';
 import 'package:calculator_app/features/calculator/presentation/presentation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -19,7 +20,9 @@ class KeypadButtonComponent extends StatelessWidget {
     return Wrap(
       alignment: WrapAlignment.center,
       crossAxisAlignment: WrapCrossAlignment.center,
-      children: Constants.kKeypadElements
+      children: (context.read<OrientationCubit>().isLandscape()
+              ? Constants.kKeypadElementsLND
+              : Constants.kKeypadElements)
           .map(
             (key) => Padding(
               key: Key(key),
@@ -38,8 +41,12 @@ class KeypadButtonComponent extends StatelessWidget {
                         : state.keyPadButtonThemeTransformer(),
                     borderRadius: BorderRadius.circular(6),
                   ),
-                  height: Adaptive.h(9.5),
-                  width: Adaptive.w(19),
+                  height: context.read<OrientationCubit>().isLandscape()
+                      ? Adaptive.h(15)
+                      : Adaptive.h(10.5),
+                  width: context.read<OrientationCubit>().isLandscape()
+                      ? Adaptive.h(16)
+                      : Adaptive.w(19),
                   child: Stack(
                     children: [
                       Center(

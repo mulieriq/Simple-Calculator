@@ -1,7 +1,9 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:calculator_app/core/core.dart';
+import 'package:calculator_app/core/platform/state/orientation_cubit.dart';
 import 'package:calculator_app/features/calculator/calculator.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 // Calculator Header
@@ -43,7 +45,9 @@ class CalculatorHeader extends StatelessWidget {
               width: Adaptive.w(2),
             ),
             CalculatorSizedBox(
-              width: Adaptive.w(18),
+              width: Adaptive.w(
+                context.read<OrientationCubit>().isLandscape() ? 15 : 18,
+              ),
               child: Column(
                 children: [
                   PreferredThemeNumberComponent(state: state),
