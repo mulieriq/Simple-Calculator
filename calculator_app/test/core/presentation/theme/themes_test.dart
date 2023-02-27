@@ -2,35 +2,27 @@ import 'package:calculator_app/core/core.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
-  group('$Themes', () {
+  group('$AppTheme', () {
     test(
       '.desaturatedBlueTheme() should  return '
       'ColorPalette.darkDesaturatedBlueMainBackground as the scaffold color '
-      'Spartan as the displayLarge FontFamily '
       'ColorPalette.veryDarkgrayishBlue as the displayLarge textColor ',
       () async {
         // arrange
 
-        final theme = Themes.desaturatedBlueTheme();
+        final theme = AppTheme.desaturatedBlueTheme();
 
         // act
         // assert
         expect(
-          theme.scaffoldBackgroundColor,
+          theme.mainBackground,
           equals(
             ColorPalette.darkDesaturatedBlueMainBackground,
           ),
         );
 
         expect(
-          theme.textTheme.displayLarge?.fontFamily,
-          equals(
-            'Spartan',
-          ),
-        );
-
-        expect(
-          theme.textTheme.displayLarge?.color,
+          theme.txtMain,
           equals(
             ColorPalette.veryDarkgrayishBlue,
           ),
@@ -41,31 +33,23 @@ void main() {
     test(
       '.lightGrayTheme() should  return '
       'ColorPalette.lightGrayMainBackground as the scaffold color '
-      'Spartan as the displayLarge FontFamily '
       'ColorPalette.veryDarkgrayishYellow as the displayLarge textColor ',
       () async {
         // arrange
 
-        final theme = Themes.lightGrayTheme();
+        final theme = AppTheme.lightGrayTheme();
 
         // act
         // assert
         expect(
-          theme.scaffoldBackgroundColor,
+          theme.mainBackground,
           equals(
             ColorPalette.lightGrayMainBackground,
           ),
         );
 
         expect(
-          theme.textTheme.displayLarge?.fontFamily,
-          equals(
-            'Spartan',
-          ),
-        );
-
-        expect(
-          theme.textTheme.displayLarge?.color,
+          theme.txtMain,
           equals(
             ColorPalette.veryDarkgrayishYellow,
           ),
@@ -76,31 +60,23 @@ void main() {
     test(
       '.darkVioletTheme() should  return '
       'ColorPalette.veryDarkVioletMainBackground as the scaffold color '
-      'Spartan as the displayLarge FontFamily '
       'ColorPalette.lightYellow as the displayLarge textColor ',
       () async {
         // arrange
 
-        final theme = Themes.darkVioletTheme();
+        final theme = AppTheme.darkVioletTheme();
 
         // act
         // assert
         expect(
-          theme.scaffoldBackgroundColor,
+          theme.mainBackground,
           equals(
             ColorPalette.veryDarkVioletMainBackground,
           ),
         );
 
         expect(
-          theme.textTheme.displayLarge?.fontFamily,
-          equals(
-            'Spartan',
-          ),
-        );
-
-        expect(
-          theme.textTheme.displayLarge?.color,
+          theme.txtMain,
           equals(
             ColorPalette.lightYellow,
           ),

@@ -18,7 +18,7 @@ class ToggleThemeComponent extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(2),
       decoration: BoxDecoration(
-        color: state.keyPadToggleThemeTransformer(),
+        color: AppTheme.of(state).tKBackgroundKey,
         borderRadius: BorderRadius.circular(20),
       ),
       child: Row(
@@ -47,7 +47,7 @@ class ToggleThemeComponent extends StatelessWidget {
                             PreferredThemeCubitState(
                               theme: preferredTheme,
                             )
-                        ? state.equalAndToggleButtonThemeTransformer()
+                        ? AppTheme.of(state).tEqualsKeyBackground
                         : Colors.transparent,
                   ),
                 ),

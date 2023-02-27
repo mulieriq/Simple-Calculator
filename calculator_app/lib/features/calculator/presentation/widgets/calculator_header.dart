@@ -25,7 +25,7 @@ class CalculatorHeader extends StatelessWidget {
           Constants.kTtitle,
           style: Theme.of(context).textTheme.displayLarge!.copyWith(
                 fontSize: 35,
-                color: state.theme1TextColorTranfromer(),
+                color: AppTheme.of(state).txt2,
               ),
         ),
         const Spacer(),
@@ -38,7 +38,7 @@ class CalculatorHeader extends StatelessWidget {
               Constants.kThemeText,
               style: Theme.of(context).textTheme.displayLarge!.copyWith(
                     fontSize: 15,
-                    color: state.theme1TextColorTranfromer(),
+                    color: AppTheme.of(state).txt2,
                   ),
             ),
             CalculatorSizedBox(

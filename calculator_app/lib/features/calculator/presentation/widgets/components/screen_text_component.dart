@@ -22,7 +22,7 @@ class ScreenText extends StatelessWidget {
       key: const Key('screen_text'),
       style: theme.textTheme.displayLarge!.copyWith(
         fontSize: 40,
-        color: state.theme1TextColorTranfromer(),
+        color: AppTheme.of(state).txt2,
       ),
     );
   }

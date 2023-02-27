@@ -21,7 +21,7 @@ class PreferredThemeNumberComponent extends StatelessWidget {
               number,
               style: Theme.of(context).textTheme.displayLarge!.copyWith(
                     fontSize: 15,
-                    color: state.theme1TextColorTranfromer(),
+                    color: AppTheme.of(state).txt2,
                   ),
             ),
           )

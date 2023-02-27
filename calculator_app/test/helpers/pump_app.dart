@@ -21,7 +21,26 @@ extension PumpApp on WidgetTester {
           child: BlocBuilder<PreferredThemeCubit, PreferredThemeCubitState>(
             builder: (context, state) => MaterialApp(
               debugShowCheckedModeBanner: false,
-              theme: Themes.themeData[state.theme],
+              theme: ThemeData(
+                scaffoldBackgroundColor: AppTheme.of(state).mainBackground,
+                textTheme: TextTheme(
+                  //For Text on , Screen, Keys and custom bar
+                  displayLarge: TextStyle(
+                    fontFamily: 'Spartan',
+                    fontSize: 32,
+                    fontWeight: FontWeight.w700,
+                    color: AppTheme.of(state).txtMain,
+                  ),
+
+                  //Reset and DEL button
+                  displayMedium: TextStyle(
+                    fontFamily: 'Spartan',
+                    fontSize: 32,
+                    fontWeight: FontWeight.w700,
+                    color: ColorPalette.white,
+                  ),
+                ),
+              ),
               home: widget,
             ),
           ),

@@ -22,7 +22,7 @@ class CalculatorScreen extends StatelessWidget {
           Adaptive.h(context.read<OrientationCubit>().isLandscape() ? 50 : 14),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
-        color: state.screeThemeTransformer(),
+        color: AppTheme.of(state).screenBackground,
       ),
       child: Align(
         alignment: Alignment.centerRight,

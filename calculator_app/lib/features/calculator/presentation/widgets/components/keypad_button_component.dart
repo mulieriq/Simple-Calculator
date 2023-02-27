@@ -37,8 +37,8 @@ class KeypadButtonComponent extends StatelessWidget {
                   clipBehavior: Clip.hardEdge,
                   decoration: BoxDecoration(
                     color: key == Constants.kDeleteButton
-                        ? state.deleteResetButtonThemeTransformer()
-                        : state.keyPadButtonThemeTransformer(),
+                        ? AppTheme.of(state).resetDelKeyBackground
+                        : AppTheme.of(state).keyBackground,
                     borderRadius: BorderRadius.circular(6),
                   ),
                   height: context.read<OrientationCubit>().isLandscape()
@@ -70,10 +70,8 @@ class KeypadButtonComponent extends StatelessWidget {
                           height: Adaptive.h(.6),
                           decoration: BoxDecoration(
                             color: key == Constants.kDeleteButton
-                                ? state
-                                    .deleteResetButtonShadowThemeTransformer()
-                                : state
-                                    .keyPadNumberButtonShadowThemeTransformer(),
+                                ? AppTheme.of(state).resetDelKeyShadow
+                                : AppTheme.of(state).keyShadow,
                           ),
                         ),
                       )

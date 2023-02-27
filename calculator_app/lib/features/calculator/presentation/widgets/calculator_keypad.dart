@@ -29,7 +29,7 @@ class CalculatorKeypad extends StatelessWidget {
         ),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
-          color: state.keyPadToggleThemeTransformer(),
+          color: AppTheme.of(state).tKBackgroundKey,
         ),
         child: Container(
           width: double.infinity,

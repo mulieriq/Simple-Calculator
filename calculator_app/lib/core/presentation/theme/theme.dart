@@ -1,2 +1,2 @@
 export './color_palette.dart';
-export './themes.dart';
+export 'app_theme.dart';

@@ -35,8 +35,8 @@ class ResetButtonsComponent extends StatelessWidget {
                   clipBehavior: Clip.hardEdge,
                   decoration: BoxDecoration(
                     color: key == Constants.kEqualButton
-                        ? state.equalAndToggleButtonThemeTransformer()
-                        : state.deleteResetButtonThemeTransformer(),
+                        ? AppTheme.of(state).tEqualsKeyBackground
+                        : AppTheme.of(state).resetDelKeyBackground,
                     borderRadius: BorderRadius.circular(10),
                   ),
                   height: Adaptive.h(
@@ -71,9 +71,8 @@ class ResetButtonsComponent extends StatelessWidget {
                             height: Adaptive.h(.6),
                             decoration: BoxDecoration(
                               color: key == Constants.kResetButton
-                                  ? state
-                                      .deleteResetButtonShadowThemeTransformer()
-                                  : state.equalButtonShadowThemeTransformer(),
+                                  ? AppTheme.of(state).resetDelKeyShadow
+                                  : AppTheme.of(state).tEqualsKeyShadow,
                             ),
                           ),
                         )
