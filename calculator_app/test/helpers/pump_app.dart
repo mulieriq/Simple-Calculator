@@ -1,4 +1,5 @@
 import 'package:calculator_app/core/core.dart';
+import 'package:calculator_app/core/platform/state/orientation_cubit.dart';
 import 'package:calculator_app/features/calculator/calculator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -16,6 +17,9 @@ extension PumpApp on WidgetTester {
             ),
             BlocProvider(
               create: (context) => CalculatorCubit(),
+            ),
+            BlocProvider(
+              create: (context) => OrientationCubit(),
             ),
           ],
           child: BlocBuilder<PreferredThemeCubit, PreferredThemeCubitState>(
